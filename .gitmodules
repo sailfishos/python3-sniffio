@@ -1,0 +1,3 @@
+[submodule "sniffio"]
+	path = sniffio
+	url = https://git.sailfishos.org/mirror/sniffio.git
