@@ -31,3 +31,4 @@ python3 ./setup.py install --skip-build --root %{buildroot}
 %defattr(-,root,root,-)
 %{python3_sitearch}/sniffio
 %{python3_sitearch}/sniffio-*.egg-info
+%exclude %{python3_sitearch}/sniffio/_tests
