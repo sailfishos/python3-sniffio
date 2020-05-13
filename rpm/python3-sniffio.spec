@@ -1,6 +1,3 @@
-# fixme: should be defined in base system side
-%define python3_sitearch %(%{__python3} -c "from distutils.sysconfig import get_python_lib; print(get_python_lib(1))")
-
 Name:       python3-sniffio
 Summary:    Sniff out which async library your code is running under
 Version:    1.1.0
@@ -10,6 +7,7 @@ URL:        https://pypi.org/project/sniffio/
 BuildArch:  noarch
 Source0:    %{name}-%{version}.tar.bz2
 Requires:   python3-base
+BuildRequires:  python3-devel
 BuildRequires:  python3-setuptools
 
 %description
@@ -21,11 +19,11 @@ This is a tiny package whose only purpose is to let you detect which async libra
 %setup -q -n %{name}-%{version}/sniffio
 
 %build
-python3 ./setup.py build
+%py3_build
 
 %install
 rm -rf %{buildroot}
-python3 ./setup.py install --skip-build --root %{buildroot}
+%py3_install
 
 %files
 %defattr(-,root,root,-)
