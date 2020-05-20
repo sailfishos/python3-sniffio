@@ -27,6 +27,6 @@ rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root,-)
-%{python3_sitearch}/sniffio
-%{python3_sitearch}/sniffio-*.egg-info
-%exclude %{python3_sitearch}/sniffio/_tests
+%{python3_sitelib}/sniffio
+%{python3_sitelib}/sniffio-*.egg-info
+%exclude %{python3_sitelib}/sniffio/_tests
